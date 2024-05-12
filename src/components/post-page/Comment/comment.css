@@ -1,0 +1,89 @@
+.comment {
+    margin: 1%;
+    border: #cccccc 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.comment-content p {
+    margin: 0;
+}
+
+.comment-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.comment-actions button {
+    margin-right: 10px;
+}
+
+.reply-form textarea {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reply-form button {
+    width: 300px;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #524094;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reply-form button:hover {
+    background-color: #562A83;
+}
+
+.comment-replies {
+    margin-left: 20px;
+}
+
+.comment-reply {
+    margin-bottom: 10px;
+    border-left: 2px solid #ccc;
+    padding-left: 10px;
+}
+
+.reply-author {
+    font-weight: bold;
+}
+
+.reply-actions button {
+    margin-right: 10px;
+}
+
+
+.comment-like-button {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.comment-like-button:hover{
+    color:#524094
+}
+
+.reply-button {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 3px;
+    color: black;
+}
+
+.reply-button:hover {
+    color:#524094
+}

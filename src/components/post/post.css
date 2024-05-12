@@ -1,0 +1,60 @@
+.post {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.author {
+    color: black;
+}
+
+.author:hover {
+    color: #524094;
+}
+
+.date {
+    color: #777;
+}
+
+.post-content {
+    margin-bottom: 10px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+}
+
+.like-button {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.like-button:hover{
+    color:#524094
+}
+
+
+.comment-button {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 2em;
+    border-radius: 3px;
+    color: black;
+}
+
+.comment-button:hover {
+    color:#524094
+}

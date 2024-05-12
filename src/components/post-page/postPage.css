@@ -1,0 +1,22 @@
+.post-comment-form textarea {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.post-comment-form button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #524094;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.post-comment-form button:hover {
+    background-color: #562A83;
+}
