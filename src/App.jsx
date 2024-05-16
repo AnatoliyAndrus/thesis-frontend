@@ -1,6 +1,6 @@
 import './App.css'
 import {useEffect, useState} from "react";
-import InfinitePostsScroller from "./components/infinite-posts-scroller/InfinitePostsScroller.jsx";
+import InfinitePostsScrollerPage from "./components/infinite-posts-scroller/InfinitePostsScrollerPage.jsx";
 import {Routes, Route, Link, BrowserRouter} from "react-router-dom"
 import RegisterForm from "./components/register-form/RegisterForm.jsx";
 import LoginForm from "./components/login-form/LoginForm.jsx";
@@ -30,20 +30,17 @@ export default function App() {
         location.reload()
     }
 
-    //useEffect for setting initial data
     useEffect(
         () => {
             if(authService.isAuthenticated()){
                 authService
                     .getCurrentUserInfo()
                     .then(res=>{
-                        console.log(res.data)
                         setCurrentUser(res.data)
                         setAuthenticated(true)
                         setLoaded(true)
                     })
                     .catch(reason => {
-                        console.log(reason, "reason")
                         authService.deleteToken()
                         setLoaded(true)
                     })
@@ -89,8 +86,8 @@ export default function App() {
                         </nav>
 
                         <Routes>
-                            <Route index element={<InfinitePostsScroller/>}></Route>
-                            <Route path="home" element={<InfinitePostsScroller/>}></Route>
+                            <Route index element={<InfinitePostsScrollerPage/>}></Route>
+                            <Route path="home" element={<InfinitePostsScrollerPage/>}></Route>
                             <Route path="register" element={<RegisterForm/>}></Route>
                             <Route path="login" element={<LoginForm/>}></Route>
                             <Route path="create-post" element={<CreatePost/>}></Route>

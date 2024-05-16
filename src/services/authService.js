@@ -5,7 +5,7 @@ import api from "../utils/api.js";
 export async function signUp({userId, nickname, email, password}) {
     try {
         await api.post(
-            `${backendBaseLink}/auth/signup`,
+            `${backendBaseLink}/auth/sign-up`,
             {userId, nickname, email, password}
         );
         return { success: true, message: "User saved successfully" };
@@ -18,7 +18,7 @@ export async function signUp({userId, nickname, email, password}) {
 export async function signIn({userId, password}) {
     try {
         const response = await api.post(
-            `${backendBaseLink}/auth/signin`,
+            `${backendBaseLink}/auth/sign-in`,
             {userId, password}
         );
         return { success: true, message: "Authenticated successfully", token:response.data.accessToken};
@@ -47,7 +47,6 @@ export function getAuthenticationHeader(){
     else return null
 }
 export function getCurrentUserInfo(){
-    console.log(getAuthenticationHeader())
     return api.get(
         `users/profile`,
         {

@@ -10,7 +10,7 @@ export const fetchPostsByFilters = async (filters) => {
     if (filters.tagIds && filters.tagIds.length > 0) params.tagIds = filters.tagIds.join(",")
     if (filters.page) params.page = filters.page
     if (filters.size) params.size = filters.size
-    console.log(params)
+
     return await api
         .get(`/posts`,
             {

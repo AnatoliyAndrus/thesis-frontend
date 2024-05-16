@@ -1,11 +1,12 @@
 import {useEffect, useState} from 'react';
 import './userProfile.css';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {getUserBasicInfo, setOrChangeAvatar} from "../../services/userService.js";
 import {CircleLoader} from "react-spinners";
 import {backendBaseLink} from "../../utils/constants.js";
 
 const UserProfile = ({ currentUser }) => {
+    const navigate = useNavigate()
     const {userId} = useParams()
     const [selectedFile, setSelectedFile] = useState(null);
 
@@ -59,6 +60,7 @@ const UserProfile = ({ currentUser }) => {
                             <p><strong>Nickname:</strong> {user.nickname}</p>
                             <p><strong>Registered Date:</strong> {new Date(user.registeredDate).toLocaleString()}</p>
                             <p><strong>User ID:</strong> {userId}</p>
+                            <button onClick={()=>navigate("posts")}>User posts</button>
                         </div>
                     </div>
                 ):

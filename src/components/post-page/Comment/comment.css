@@ -1,13 +1,13 @@
 .comment {
     margin: 1%;
-    border: #cccccc 1px solid;
+    border: 1px solid #ccc;
     border-radius: 10px;
     padding: 5px;
 }
 
 .comment-header {
-    display: flex;
     justify-content: space-between;
+    display: flex;
     margin-bottom: 5px;
 }
 
@@ -16,8 +16,8 @@
 }
 
 .comment-actions {
-    display: flex;
     justify-content: space-between;
+    display: flex;
     margin-top: 5px;
 }
 
@@ -39,7 +39,7 @@
     border: none;
     border-radius: 5px;
     background-color: #524094;
-    color: #fff;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }

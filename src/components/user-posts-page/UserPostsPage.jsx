@@ -9,8 +9,6 @@ import {CircleLoader} from "react-spinners";
  */
 export default function UserPostsPage(){
     const {userId} = useParams()
-    console.log(userId)
-
     const [posts, setPosts] = useState(null)
     const [isLoaded, setLoaded] = useState(false)
     const [exists, setExists] = useState(false)

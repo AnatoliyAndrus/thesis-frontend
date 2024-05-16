@@ -28,13 +28,12 @@ const CreatePost = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        createPost({title, content, tags:selectedTags.map(tag=>tag.tagId)})
+        createPost({title, content, tags:selectedTags.map(tag=>tag.value)})
             .then(
                 res => navigate("/home")
             )
     };
 
-    //getting all tags from server
     useEffect(
         () => {
             async function setData() {

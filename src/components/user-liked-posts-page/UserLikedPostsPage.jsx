@@ -12,19 +12,16 @@ import Post from "../post/Post.jsx";
 export default function UserLikedPostsPage(){
     const navigate = useNavigate()
     const {userId} = useParams()
-    console.log(userId)
 
     const [posts, setPosts] = useState(null)
     const [isLoaded, setLoaded] = useState(false)
     const [exists, setExists] = useState(false)
 
     useEffect(()=>{
-        //not authenticated user has no right to access liked-posts
         if(!isAuthenticated()) navigate("/login")
 
         getLikedPosts(userId)
             .then(res=>{
-                console.log("liked", res.data)
                 setPosts(res.data)
                 setLoaded(true)
                 setExists(true)

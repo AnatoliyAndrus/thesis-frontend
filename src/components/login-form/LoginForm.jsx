@@ -36,7 +36,6 @@ export default function LoginForm() {
                     toast(res.message)
                 }
             })
-        console.log(formData);
     };
 
     return (

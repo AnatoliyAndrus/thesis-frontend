@@ -2,13 +2,13 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import {CircleLoader} from "react-spinners";
 import {useEffect, useState} from "react";
 import Select from "react-select";
-import "./InfinitePostsScroller.css"
+import "./infinitePostsScrollerPage.css"
 import {fetchAllTags} from "../../services/tagService.js"
 import {fetchPostsByFilters} from "../../services/postService.js";
 import Post from "../post/Post.jsx";
 
 
-export default function InfinitePostsScroller() {
+export default function InfinitePostsScrollerPage() {
 
     const [isLoaded, setLoaded] = useState(false)
 
@@ -26,7 +26,6 @@ export default function InfinitePostsScroller() {
 
     const [selectedTags, setSelectedTags] = useState([]);
 
-    //works each time when component loads
     useEffect(
         () => {
             async function setData() {
@@ -36,17 +35,11 @@ export default function InfinitePostsScroller() {
                 setPosts(fetchedPosts.data.content);
                 if (fetchedPosts.data.last) setHasMorePosts(false)
                 setLoaded(true)
-                console.log("first 10: ", fetchedPosts)
             }
 
             setData()
         },
         []
-    )
-
-    useEffect(
-        () => console.log("page", page),
-        [page]
     )
 
 
@@ -80,34 +73,46 @@ export default function InfinitePostsScroller() {
                 <>
                     <div>
                         <div className="input-holder">
-                            <input
-                                className="inline-input"
-                                type="text"
-                                placeholder="Author userID"
-                                value={authorId}
-                                onChange={e => setAuthorId(e.target.value)}
-                            />
-                            <input
-                                className="inline-input"
-                                type="text"
-                                placeholder="Title"
-                                value={title}
-                                onChange={e => setTitle(e.target.value)}
-                            />
-                            <input
-                                className="inline-input"
-                                type="datetime-local"
-                                placeholder="Min Date"
-                                value={minDate}
-                                onChange={e => setMinDate(e.target.value)}
-                            />
-                            <input
-                                className="inline-input"
-                                type="datetime-local"
-                                placeholder="Max Date"
-                                value={maxDate}
-                                onChange={e => setMaxDate(e.target.value)}
-                            />
+                            <div>
+                                <label htmlFor="author">Author</label>
+                                <input
+                                    name="author"
+                                    type="text"
+                                    placeholder="Author userID"
+                                    value={authorId}
+                                    onChange={e => setAuthorId(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="title">Title</label>
+                                <input
+                                    name="title"
+                                    type="text"
+                                    placeholder="Title"
+                                    value={title}
+                                    onChange={e => setTitle(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="From">From</label>
+                                <input
+                                    name="from"
+                                    type="datetime-local"
+                                    placeholder="Min Date"
+                                    value={minDate}
+                                    onChange={e => setMinDate(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="to">To</label>
+                                <input
+                                    name="to"
+                                    type="datetime-local"
+                                    placeholder="Max Date"
+                                    value={maxDate}
+                                    onChange={e => setMaxDate(e.target.value)}
+                                />
+                            </div>
                         </div>
                             <Select
                                 isMulti

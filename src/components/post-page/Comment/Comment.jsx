@@ -2,9 +2,10 @@ import {useState} from 'react';
 import './comment.css'
 import {IoMdChatboxes, IoMdHeart, IoMdHeartEmpty} from "react-icons/io";
 import {createComment, toggleLike} from "../../../services/commentService.js";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Comment = ({commentData}) => {
+    const navigate = useNavigate()
     const [replyContent, setReplyContent] = useState('');
     const [showReplyInput, setShowReplyInput] = useState(false);
 
@@ -28,12 +29,14 @@ const Comment = ({commentData}) => {
     };
 
     const handleLikeClick = () => {
-        console.log("data", data)
-        console.log(data.commentId)
         toggleLike(data.commentId)
             .then(res=>{
                 setData(val=>{return {...val, isLiked:res.isLiked, likes:res.isLiked?val.likes+1:val.likes-1}})
-            })
+            }).catch(e=>{
+                if(e.response.status===403){
+                    navigate("/login")
+                }
+        })
     };
 
     return (

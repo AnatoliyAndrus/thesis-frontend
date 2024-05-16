@@ -6,8 +6,6 @@ import {ToastContainer, toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function RegisterForm() {
-    const navigate = useNavigate();
-
     const [formData, setFormData] = useState({
         userId: '',
         nickname: '',
@@ -16,12 +14,15 @@ export default function RegisterForm() {
     });
 
     const handleChangeField = (e) => {
+
         const {name, value} = e.target;
         setFormData({
             ...formData,
             [name]: value
         });
     };
+
+    const navigate = useNavigate();
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -35,8 +36,7 @@ export default function RegisterForm() {
                     toast(res.message)
                 }
             })
-        console.log(formData);
-    };
+          };
 
     return (
         <div className="form-container">
@@ -45,12 +45,12 @@ export default function RegisterForm() {
                 <div className="field-container">
                     <label htmlFor="userId" className="label">User ID:</label>
                     <input
+                        value={formData.userId}
+                        onChange={handleChangeField}
                         className="input-field"
                         type="text"
                         id="userId"
                         name="userId"
-                        value={formData.userId}
-                        onChange={handleChangeField}
                         placeholder="someId123"
                         required
                     />

@@ -3,7 +3,6 @@ import './post.css';
 import {IoMdHeart, IoMdHeartEmpty, IoMdChatboxes} from "react-icons/io";
 import {Link, useNavigate} from "react-router-dom";
 import * as postService from "../../services/postService.js"
-import {isAuthenticated} from "../../services/authService.js";
 
 const Post = ({ postData }) => {
     const navigate = useNavigate()
@@ -19,7 +18,11 @@ const Post = ({ postData }) => {
             .then(res=>{
                 setLiked(res.isLiked)
                 setLikes(val=>res.isLiked?val+1:val-1)
-            })
+            }).catch(e=>{
+                if(e.response.status===403){
+                    navigate("/login")
+                }
+        })
     };
 
     return (
@@ -41,9 +44,11 @@ const Post = ({ postData }) => {
                     <span style={{fontFamily:"Arial"}}>{likes}</span>
                 </div>
 
-                {
-                    tags.map(tag=><div key={tag.tagId} style={{backgroundColor:"#524094", color:"white", alignSelf:"center",padding:"5px 10px", borderRadius:"10px"}}>{tag.name}</div>)
-                }
+                <div className="tags">
+                    {
+                        tags.map(tag=><div key={tag.tagId} style={{backgroundColor:"#524094", color:"white", alignSelf:"center",padding:"5px 10px", borderRadius:"10px"}}>{tag.name}</div>)
+                    }
+                </div>
 
                 <Link to={`/posts/${postId}`}>
                     <IoMdChatboxes className="comment-button"></IoMdChatboxes>

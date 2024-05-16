@@ -32,12 +32,12 @@ button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #524094;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #562A83;
 }

@@ -19,17 +19,17 @@ input[type='file'] {
     margin-bottom: 10px;
 }
 
-button {
+.user-profile button {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #524094;
+    color: white;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+.user-profile button:hover {
+    background-color: #562A83;
 }
 
 .user-details {

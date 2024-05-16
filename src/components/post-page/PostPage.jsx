@@ -25,7 +25,6 @@ export default function PostPage(){
                 setPostData(res.data)
                 setLoaded(true)
                 setExists(true)
-                res.data.comments.forEach(console.log)
             }).catch(e => setLoaded(true))
     }
 

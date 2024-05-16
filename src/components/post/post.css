@@ -20,7 +20,7 @@
 }
 
 .date {
-    color: #777;
+    color: grey;
 }
 
 .post-content {
@@ -57,4 +57,13 @@
 
 .comment-button:hover {
     color:#524094
+}
+
+.tags {
+    display: flex;
+    justify-content: left;
+}
+
+.tags > * {
+    margin: 1px;
 }

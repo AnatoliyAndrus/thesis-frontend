@@ -16,7 +16,6 @@ export const toggleLike = async (commentId) => {
 }
 
 export const createComment = (content, postId, replyTo) => {
-    console.log(content, postId, replyTo)
     return api.post(
         `posts/${postId}/comments`,
         {
