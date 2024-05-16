@@ -4,9 +4,6 @@ import {getPostsAuthoredBy} from "../../services/postService.js";
 import Post from "../post/Post.jsx";
 import {CircleLoader} from "react-spinners";
 
-/**
- * page of posts authored by user
- */
 export default function UserPostsPage(){
     const {userId} = useParams()
     const [posts, setPosts] = useState(null)

@@ -30,7 +30,7 @@ const CreatePost = () => {
 
         createPost({title, content, tags:selectedTags.map(tag=>tag.value)})
             .then(
-                res => navigate("/home")
+                () => navigate("/home")
             )
     };
 

@@ -1,6 +1,4 @@
-/**
- * page for displaying one post with its comments
- */
+
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getPost} from "../../services/postService.js";

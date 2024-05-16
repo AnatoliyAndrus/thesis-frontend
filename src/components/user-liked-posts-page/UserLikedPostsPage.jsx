@@ -1,7 +1,4 @@
-/**
- * page of posts liked by user
- * should be accessible only for this exact user
- */
+
 import {useEffect, useState} from "react";
 import {isAuthenticated} from "../../services/authService.js";
 import {useNavigate, useParams} from "react-router-dom";
