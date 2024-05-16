@@ -26,7 +26,7 @@ textarea {
     box-sizing: border-box;
 }
 
-button {
+.create-post-button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -38,6 +38,6 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+.create-post-button:hover {
     background-color: #562A83;
 }

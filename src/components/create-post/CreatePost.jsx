@@ -83,7 +83,7 @@ const CreatePost = () => {
                                     onChange={setSelectedTags}
                                 />
                             </div>
-                            <button type="submit">Create Post</button>
+                            <button type="submit" className="create-post-button">Create Post</button>
                         </form>
                     </div>
 
